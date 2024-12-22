@@ -24,22 +24,36 @@
       "dest": "/wp/wp-includes/$1"
     },
     {
+      "src": "^/wp-login\\.php",
+      "dest": "/api/wp-login.php"
+    },
+    {
+      "src": "^/wp-cron\\.php",
+      "dest": "/api/wp-cron.php"
+    },
+    {
+      "src": "^/xmlrpc\\.php",
+      "dest": "/api/xmlrpc.php"
+    },
+    {
       "src": "/(.*)\\.php",
       "dest": "/api/$1.php"
     },
     {
-      "src": "/",
+      "src": "^/favicon\\.ico",
+      "dest": "/wp/favicon.ico"
+    },
+    {
+      "src": "^/robots\\.txt",
+      "dest": "/wp/robots.txt"
+    },
+    {
+      "src": "^/$",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/(.*)",
       "dest": "/api/index.php"
     }
-  ],
-  "env": {
-    "DATABASE": "neihang_org",
-    "USERNAME": "neihang_org",
-    "PASSWORD": "LeGLcWWSxPZRaR7A",
-    "HOST": "119.101.148.25",
-    "PORT": "3306",
-    "WP_HOME": "https://neihang.org",
-    "WP_SITEURL": "https://neihang.org",
-    "UPLOADS_URL": "https://ibigqiang.github.io/neihangorg-media/wp-content/uploads"
-  }
+  ]
 }
