@@ -56,14 +56,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+define( 'AUTH_KEY',         'Kj9(mP#x2$vN4@cL5)hR8*wY3&zQ1' );
+define( 'SECURE_AUTH_KEY',  'Ht6%kM#n7$bV2@xF9)jW4*pU5&yE8' );
+define( 'LOGGED_IN_KEY',    'Gf3#dR@w5$mX8*nB6)tK2&vH9%cL4' );
+define( 'NONCE_KEY',        'Ys7#pW@m4$kH2*xN9)fB5&tR6%vL8' );
+define( 'AUTH_SALT',        'Jn5#hK@t8$bM4*wR2)xL7&pV3%cQ9' );
+define( 'SECURE_AUTH_SALT', 'Xc6#mB@f4$vH8*tK2)nW5&yL7%pR3' );
+define( 'LOGGED_IN_SALT',   'Pd9#wL@k5$tR2*mN7)bH4&xF8%cV6' );
+define( 'NONCE_SALT',       'Qg4#vF@h8$mK6*pL2)tW9&yB5%nR7' );
 
 /**#@-*/
 
@@ -106,6 +106,10 @@ if (isset($_ENV['S3_KEY_ID']) && isset($_ENV['S3_ACCESS_KEY'])) {
 // Disable file modification because the changes won't be persisted.
 define('DISALLOW_FILE_EDIT', true );
 define('DISALLOW_FILE_MODS', true );
+
+// 添加媒体文件配置
+define('UPLOADS', 'wp-content/uploads');
+define('WP_CONTENT_URL', getenv('UPLOADS_URL'));
 
 /* That's all, stop editing! Happy publishing. */
 
