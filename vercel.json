@@ -2,18 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.php",
-      "use": "@vercel/php"
-    },
-    {
       "src": "wp/**/*",
       "use": "@vercel/static"
+    },
+    {
+      "src": "api/**/*.php",
+      "use": "@vercel/php"
     }
   ],
   "routes": [
     {
+      "src": "/wp-admin",
+      "dest": "/api/wp-admin/index.php"
+    },
+    {
       "src": "/wp-admin/(.*)",
-      "dest": "/wp/wp-admin/$1"
+      "dest": "/api/wp-admin/$1"
     },
     {
       "src": "/wp-content/(.*)",
@@ -24,32 +28,28 @@
       "dest": "/wp/wp-includes/$1"
     },
     {
-      "src": "^/wp-login\\.php",
-      "dest": "/api/wp-login.php"
-    },
-    {
-      "src": "^/wp-cron\\.php",
-      "dest": "/api/wp-cron.php"
-    },
-    {
-      "src": "^/xmlrpc\\.php",
-      "dest": "/api/xmlrpc.php"
-    },
-    {
-      "src": "/(.*)\\.php",
-      "dest": "/api/$1.php"
-    },
-    {
-      "src": "^/favicon\\.ico",
+      "src": "^/favicon.ico",
       "dest": "/wp/favicon.ico"
     },
     {
-      "src": "^/robots\\.txt",
+      "src": "^/robots.txt",
       "dest": "/wp/robots.txt"
     },
     {
-      "src": "^/$",
-      "dest": "/api/index.php"
+      "src": "/wp-login.php",
+      "dest": "/api/wp-login.php"
+    },
+    {
+      "src": "/wp-cron.php",
+      "dest": "/api/wp-cron.php"
+    },
+    {
+      "src": "/xmlrpc.php",
+      "dest": "/api/xmlrpc.php"
+    },
+    {
+      "src": "/(.*).php",
+      "dest": "/api/$1.php"
     },
     {
       "src": "/(.*)",
